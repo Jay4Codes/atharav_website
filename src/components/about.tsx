@@ -1,4 +1,5 @@
 import { Icon } from "@/components/icon";
+import { RichText } from "@/components/rich-text";
 import { about, site } from "@/data/content";
 
 export function About() {
@@ -10,14 +11,18 @@ export function About() {
           About
         </p>
         <h2 className="mt-2 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
-          Technical depth, business exposure, and an operator’s view of how work gets done
+          Technical depth, <em className="em">business exposure</em>, and an operator’s view of how work gets done
         </h2>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
           <div className="space-y-5 text-[15px] leading-7 text-ink-soft sm:text-base sm:leading-8">
             {about.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              <p key={paragraph.slice(0, 48)}>
+                <RichText text={paragraph} />
+              </p>
             ))}
-            <p>{site.seeking}</p>
+            <p>
+              <RichText text={site.seeking} />
+            </p>
           </div>
           <div>
             <p className="text-sm font-semibold">Areas of interest</p>

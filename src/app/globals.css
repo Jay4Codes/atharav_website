@@ -89,6 +89,29 @@ body {
   color: var(--muted);
 }
 
+.mark {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.navy-panel .mark,
+.navy-panel .hl {
+  color: #fff;
+}
+
+.em {
+  font-style: italic;
+}
+
+.hl {
+  font-weight: 650;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 75%, transparent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
 .btn-primary,
 .btn-secondary,
 .nav-link,

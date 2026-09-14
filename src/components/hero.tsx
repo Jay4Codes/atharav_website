@@ -1,6 +1,7 @@
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { Portrait } from "@/components/portrait";
+import { RichText } from "@/components/rich-text";
 import { affiliations, site } from "@/data/content";
 
 export function Hero() {
@@ -21,10 +22,11 @@ export function Hero() {
           </h1>
           <span className="mt-4 block h-0.5 w-16 bg-[image:var(--grad-accent)] rise d1" />
           <p className="rise d2 mt-4 max-w-xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
-            {site.summary}
+            <RichText text={site.summary} />
           </p>
           <p className="rise d3 mt-4 max-w-xl text-sm leading-6 text-muted sm:text-[15px] sm:leading-7">
-            {site.headline} at {site.school}. {site.seeking}
+            <strong className="mark">{site.headline}</strong> at{" "}
+            <strong className="mark">{site.school}</strong>. <RichText text={site.seeking} />
           </p>
           <div className="rise d4 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a

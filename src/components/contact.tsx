@@ -10,10 +10,11 @@ export function Contact() {
           Contact
         </p>
         <h2 className="mt-3 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
-          Get in touch about analytics, operations, and consulting work.
+          Get in touch about <em className="em">analytics</em>, <em className="em">operations</em>, and{" "}
+          <em className="em">consulting</em> work.
         </h2>
         <p className="mt-4 max-w-xl text-[15px] leading-7 text-white/65">
-          Based in Richardson, TX. Best reached by email or LinkedIn.
+          Based in <strong className="mark">Richardson, TX</strong>. Best reached by email or LinkedIn.
         </p>
 
         <div className="mt-8 grid gap-px bg-white/15 md:grid-cols-3">

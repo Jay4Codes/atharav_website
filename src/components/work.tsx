@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { ProjectVisual } from "@/components/project-visual";
+import { RichText } from "@/components/rich-text";
 import { projects } from "@/data/content";
 
 export function Work() {
@@ -16,7 +17,7 @@ export function Work() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-6 text-muted">
-            Analytics, internal platforms, and AI initiatives at Abhitech Energycon.
+            <RichText text="**Analytics**, internal platforms, and **AI** initiatives at **Abhitech Energycon**." />
           </p>
         </div>
 
@@ -92,12 +93,16 @@ export function Work() {
                     </>
                   ) : null}
                 </p>
-                <p className="mt-4 text-[15px] leading-7 text-ink-soft">{project.summary}</p>
+                <p className="mt-4 text-[15px] leading-7 text-ink-soft">
+                  <RichText text={project.summary} />
+                </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-muted">
                   {project.details.map((detail) => (
                     <li key={detail} className="flex gap-2">
                       <span className="mt-2 h-1 w-1 shrink-0 bg-accent" />
-                      <span>{detail}</span>
+                      <span>
+                        <RichText text={detail} />
+                      </span>
                     </li>
                   ))}
                 </ul>

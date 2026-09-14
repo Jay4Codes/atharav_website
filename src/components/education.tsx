@@ -1,5 +1,6 @@
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
+import { RichText } from "@/components/rich-text";
 import { education, skills } from "@/data/content";
 
 export function Education() {
@@ -38,11 +39,11 @@ export function Education() {
                   {item.college}
                 </p>
                 <p className={`mt-3 text-[15px] leading-6 ${item.onDark ? "text-white/90" : "text-ink-soft"}`}>
-                  {item.degree}
+                  <RichText text={`**${item.degree}**`} />
                 </p>
                 {"detail" in item ? (
                   <p className={`mt-3 text-sm leading-6 ${item.onDark ? "text-white/75" : "text-muted"}`}>
-                    {item.detail}
+                    <RichText text={item.detail} />
                   </p>
                 ) : null}
                 <p className={`mono mt-3 text-[12px] ${item.onDark ? "text-white/60" : "text-muted"}`}>

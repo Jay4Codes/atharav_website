@@ -1,5 +1,6 @@
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
+import { RichText } from "@/components/rich-text";
 import { experience, partners, speaking } from "@/data/content";
 
 export function Experience() {
@@ -67,7 +68,9 @@ export function Experience() {
                       {role.bullets.map((bullet) => (
                         <li key={bullet} className="flex gap-3">
                           <span className="mt-2.5 h-1 w-1 shrink-0 bg-navy" />
-                          <span>{bullet}</span>
+                          <span>
+                            <RichText text={bullet} />
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -88,7 +91,9 @@ export function Experience() {
             <p className="mono mt-2 text-[13px] text-muted">
               {speaking.short} · {speaking.role} · {speaking.date}
             </p>
-            <p className="mt-4 text-[15px] leading-7 text-ink-soft">{speaking.detail}</p>
+            <p className="mt-4 text-[15px] leading-7 text-ink-soft">
+              <RichText text={speaking.detail} />
+            </p>
           </aside>
           {partners.map((partner) => (
             <a
