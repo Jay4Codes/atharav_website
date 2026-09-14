@@ -34,7 +34,7 @@ export function SiteChrome() {
   return (
     <>
       <div className="pointer-glow max-md:hidden" aria-hidden="true" />
-      <div className="grain" aria-hidden="true" />
+      <div className="grain max-md:hidden" aria-hidden="true" />
     </>
   );
 }

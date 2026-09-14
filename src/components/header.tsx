@@ -31,11 +31,11 @@ export function Header() {
     <header className="relative sticky top-0 z-40 border-b border-line bg-surface/88 backdrop-blur-md">
       <div className="progress-bar" aria-hidden="true" />
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8">
-        <a href="#top" className="group flex min-h-11 items-center gap-2.5 sm:gap-3">
-          <span className="flex h-8 w-8 items-center justify-center bg-navy text-[11px] font-semibold text-white transition-transform duration-200 ease-[var(--ease)] group-hover:scale-105">
+        <a href="#top" className="group flex min-h-11 min-w-0 items-center gap-2.5 sm:gap-3">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-navy text-[11px] font-semibold text-white transition-transform duration-200 ease-[var(--ease)] group-hover:scale-105">
             {site.shortName}
           </span>
-          <span className="text-sm font-semibold tracking-tight transition-colors group-hover:text-navy">
+          <span className="max-w-[11rem] truncate text-sm font-semibold tracking-tight transition-colors group-hover:text-navy sm:max-w-none">
             {site.name}
           </span>
         </a>
@@ -57,7 +57,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center border border-line transition-colors hover:border-navy hover:bg-navy hover:text-white md:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center border border-line transition-colors hover:border-navy hover:bg-navy hover:text-white md:hidden"
           aria-expanded={open}
           aria-label="Toggle menu"
           onClick={() => setOpen((value) => !value)}
@@ -72,7 +72,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-line px-4 py-3 md:hidden">
+        <div className="border-t border-line px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom,0px))] md:hidden">
           <nav className="flex flex-col">
             {nav.map((item) => (
               <a

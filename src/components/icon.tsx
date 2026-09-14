@@ -10,6 +10,7 @@ export type IconName =
   | "phone"
   | "pin"
   | "arrowUp"
+  | "chevronDown"
   | "briefcase"
   | "grad"
   | "mic"
@@ -101,6 +102,7 @@ const paths: Record<IconName, ReactNode> = {
       <path d="m6 11 6-6 6 6" />
     </>
   ),
+  chevronDown: <path d="M6 9l6 6 6-6" />,
   briefcase: (
     <>
       <rect x="3" y="7" width="18" height="13" rx="2" />

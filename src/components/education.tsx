@@ -42,7 +42,7 @@ export function Education() {
                 >
                   {item.note}
                 </p>
-                <h3 className="display mt-1.5 text-xl font-semibold tracking-tight sm:text-[1.35rem]">
+                <h3 className="display mt-1.5 text-xl font-semibold tracking-tight break-words sm:text-[1.35rem]">
                   {item.school}
                 </h3>
                 <p className={`mt-1 text-sm ${item.onDark ? "text-white/75" : "text-muted"}`}>

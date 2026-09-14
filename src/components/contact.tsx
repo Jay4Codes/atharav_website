@@ -11,7 +11,7 @@ export function Contact() {
       />
       <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <SectionKicker index="05" icon="mail" label="Contact" invert />
-        <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+        <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight text-balance sm:text-3xl lg:text-4xl">
           Get in touch about <em className="em">analytics</em>, <em className="em">operations</em>, and{" "}
           <em className="em">consulting</em> work.
         </h2>
@@ -20,7 +20,7 @@ export function Contact() {
         </p>
         <a
           href={`mailto:${site.email}`}
-          className="email-xl display mt-8 inline-block max-w-full text-2xl leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl"
+          className="email-xl display mt-8 hidden max-w-full break-all text-2xl leading-tight tracking-tight text-white sm:inline-block sm:text-3xl lg:text-4xl"
         >
           {site.email}
         </a>
@@ -45,7 +45,7 @@ export function Contact() {
             <Icon name="linkedin" className="mt-0.5 h-5 w-5 shrink-0 text-white/70" />
             <span>
               <span className="block text-[13px] text-white/55">LinkedIn</span>
-              <span className="mt-2 block text-sm font-medium">linkedin.com/in/atharav-samant</span>
+              <span className="mt-2 block text-sm font-medium break-all">linkedin.com/in/atharav-samant</span>
             </span>
           </a>
           <a

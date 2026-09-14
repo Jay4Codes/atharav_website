@@ -56,7 +56,7 @@ export function Work() {
                     />
                     <span className="text-[11px] font-medium text-muted">{project.timeframe}</span>
                   </div>
-                  <h3 className="mt-3 flex items-center gap-2 text-lg font-semibold tracking-tight sm:text-xl">
+                  <h3 className="mt-3 flex min-w-0 items-center gap-2 text-lg font-semibold tracking-tight sm:text-xl">
                     <Icon
                       name={project.visual}
                       className="h-4 w-4 shrink-0 text-navy transition-colors group-hover:text-accent"
@@ -66,7 +66,7 @@ export function Work() {
                         href={project.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
+                        className="inline-flex min-w-0 items-center gap-1.5 transition-colors hover:text-accent"
                       >
                         {project.name}
                         <Icon

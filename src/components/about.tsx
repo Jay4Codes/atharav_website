@@ -9,7 +9,7 @@ export function About() {
     <section id="about" className="border-b border-line">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <SectionKicker index="01" icon="user" label="About" />
-        <h2 className="mt-3 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+        <h2 className="mt-3 max-w-3xl text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
           Technical depth, <em className="em">business exposure</em>, and an operator’s view of how work gets done
         </h2>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
@@ -20,7 +20,7 @@ export function About() {
                   <RichText text={paragraph} />
                 </p>
               ))}
-              <p>
+              <p className="hidden sm:block">
                 <RichText text={site.seeking} />
               </p>
             </div>
