@@ -12,6 +12,7 @@
   --accent: #c45c12;
   --accent-2: #e07a2f;
   --davis: #022851;
+  --utd: #154734;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --duration: 220ms;
   --duration-slow: 480ms;
@@ -33,6 +34,7 @@
   --color-navy-2: var(--navy-2);
   --color-accent: var(--accent);
   --color-davis: var(--davis);
+  --color-utd: var(--utd);
   --font-sans: var(--font-source-sans);
   --font-serif: var(--font-source-serif);
   --font-mono: var(--font-ibm-plex-mono);
@@ -95,7 +97,9 @@ body {
 }
 
 .navy-panel .mark,
-.navy-panel .hl {
+.navy-panel .hl,
+.utd-panel .mark,
+.utd-panel .hl {
   color: #fff;
 }
 
@@ -205,8 +209,20 @@ body {
   background: color-mix(in srgb, white 8%, var(--navy));
 }
 
+.bg-davis.row-link-dark:hover {
+  background: color-mix(in srgb, white 10%, var(--davis));
+}
+
+.bg-utd.row-link-dark:hover {
+  background: color-mix(in srgb, white 10%, var(--utd));
+}
+
 .navy-panel {
   background: var(--grad-navy);
+}
+
+.utd-panel {
+  background: linear-gradient(165deg, #1d5c44 0%, #154734 55%, #0d2f22 100%);
 }
 
 .surface-wash {

@@ -6,10 +6,10 @@ export function Portrait() {
     <Image
       src={site.photo}
       alt={`${site.name}, ${site.headline} candidate at ${site.school}`}
-      width={1200}
-      height={1200}
+      width={1984}
+      height={2976}
       priority
-      className="h-64 w-full object-cover object-[center_18%] sm:h-80 md:h-full md:min-h-[24rem] lg:min-h-[28rem]"
+      className="h-64 w-full object-cover object-[center_12%] sm:h-80 md:h-full md:min-h-[24rem] lg:min-h-[28rem]"
     />
   );
 }

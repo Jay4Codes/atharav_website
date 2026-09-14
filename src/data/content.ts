@@ -7,7 +7,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/atharav-samant",
   headline: "MBA & M.S. Business Analytics and AI",
   school: "The University of Texas at Dallas",
-  photo: "/images/atharav.jpg",
+  photo: "/images/atharav_samant_utdallas_edu-b89c3c43-edit.jpg",
   url: "https://atharavsamant.com",
   seeking:
     "Actively seeking __internships__ in *consulting*, *technology strategy*, *business analytics*, *product management*, and *digital transformation*.",
@@ -56,7 +56,8 @@ export const affiliations = [
     role: "MBA / M.S. Analytics & AI, 2026–2028",
     src: "/logos/utdallas.svg",
     href: "https://jindal.utdallas.edu/",
-    onDark: false,
+    onDark: true,
+    theme: "utd",
   },
   {
     name: "UC Davis",
@@ -64,6 +65,7 @@ export const affiliations = [
     src: "/logos/ucdavis.svg",
     href: "https://www.ucdavis.edu/",
     onDark: true,
+    theme: "davis",
   },
 ] as const;
 
@@ -222,7 +224,8 @@ export const education = [
       "Pursuing a *dual-degree* **MBA and M.S. in Business Analytics and Artificial Intelligence** at the **Naveen Jindal School of Management**. Interested in *consulting*, *technology strategy*, *digital transformation*, *product innovation*, and *data-driven decision-making*.",
     logo: "/logos/utdallas.svg",
     href: "https://jindal.utdallas.edu/",
-    onDark: false,
+    onDark: true,
+    theme: "utd",
   },
   {
     school: "The University of California, Davis",
@@ -291,7 +294,6 @@ export const skills = [
       { label: "Chess", icon: "pawn" },
       { label: "Table tennis", icon: "paddle" },
       { label: "Soccer", icon: "ball" },
-      { label: "Cycling", icon: "bike" },
       { label: "Event management", icon: "calendar" },
       { label: "Photography", icon: "camera" },
     ],

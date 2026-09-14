@@ -23,18 +23,28 @@ export function Education() {
                 target="_blank"
                 rel="noreferrer"
                 className={`card block p-5 sm:p-6 ${
-                  item.onDark ? "navy-panel text-white hover:border-accent" : ""
+                  "theme" in item && item.theme === "utd"
+                    ? "utd-panel text-white hover:border-accent"
+                    : item.onDark
+                      ? "navy-panel text-white hover:border-accent"
+                      : ""
                 }`}
               >
                 <Logo
                   src={item.logo}
                   alt={item.school}
-                  className="h-7 w-auto max-w-[min(13rem,70vw)] object-contain object-left sm:h-8"
+                  className="h-8 w-auto max-w-[min(16rem,78vw)] object-contain object-left sm:h-9"
                 />
-                <p className={`mt-5 text-[12px] ${item.onDark ? "text-white/70" : "text-muted"}`}>
+                <p
+                  className={`mt-5 text-[12px] font-medium uppercase tracking-[0.14em] ${
+                    item.onDark ? "text-white/70" : "text-muted"
+                  }`}
+                >
                   {item.note}
                 </p>
-                <h3 className="mt-1 text-lg font-semibold">{item.school}</h3>
+                <h3 className="display mt-1.5 text-xl font-semibold tracking-tight sm:text-[1.35rem]">
+                  {item.school}
+                </h3>
                 <p className={`mt-1 text-sm ${item.onDark ? "text-white/75" : "text-muted"}`}>
                   {item.college}
                 </p>

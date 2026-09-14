@@ -55,17 +55,19 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
               className={`group flex min-h-[5.25rem] items-center gap-3 border-b border-line px-4 py-4 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 sm:gap-4 sm:px-6 lg:px-8 ${
-                item.onDark ? "row-link-dark bg-davis" : "row-link bg-surface"
+                item.onDark
+                  ? `row-link-dark ${"theme" in item && item.theme === "utd" ? "bg-utd" : "bg-davis"}`
+                  : "row-link bg-surface"
               }`}
             >
               <Logo
                 src={item.src}
                 alt=""
-                className="h-8 w-auto max-w-[7.5rem] object-contain object-left transition-transform duration-300 group-hover:scale-105 sm:h-9 sm:max-w-[8.5rem]"
+                className="h-8 w-auto max-w-[8.5rem] object-contain object-left transition-transform duration-300 group-hover:scale-105 sm:h-9 sm:max-w-[10rem]"
               />
               <span className="min-w-0">
                 <span
-                  className={`block text-sm font-semibold leading-5 sm:text-[15px] ${
+                  className={`block text-[15px] font-semibold leading-5 tracking-tight sm:text-base ${
                     item.onDark ? "text-white" : "text-ink"
                   }`}
                 >
