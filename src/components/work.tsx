@@ -1,3 +1,4 @@
+import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { ProjectVisual } from "@/components/project-visual";
 import { projects } from "@/data/content";
@@ -5,11 +6,11 @@ import { projects } from "@/data/content";
 export function Work() {
   return (
     <section id="work" className="border-b border-line">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-[13px] text-muted">Selected work</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-[2rem]">
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
               Products built inside industrial operations
             </h2>
           </div>
@@ -18,14 +19,14 @@ export function Work() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:mt-12 md:grid-cols-2">
           {projects.map((project) => (
             <article
               key={project.id}
               id={project.id}
               className="flex flex-col overflow-hidden border border-line bg-surface"
             >
-              <div className="relative h-40">
+              <div className="relative h-36 sm:h-40">
                 <ProjectVisual kind={project.visual} />
                 <div className="absolute top-3 left-3 flex items-center gap-2 bg-white/95 px-2.5 py-1.5">
                   <Logo
@@ -38,9 +39,12 @@ export function Work() {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-xl font-semibold tracking-tight">{project.name}</h3>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h3 className="flex items-center gap-2 text-lg font-semibold tracking-tight sm:text-xl">
+                    <Icon name={project.visual} className="h-4 w-4 shrink-0 text-navy" />
+                    {project.name}
+                  </h3>
                   <p className="mono text-[13px] text-accent">{project.impact}</p>
                 </div>
                 <p className="mt-1 text-sm text-muted">{project.kind}</p>

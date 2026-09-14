@@ -1,13 +1,17 @@
+import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { education, skills } from "@/data/content";
 
 export function Education() {
   return (
     <section id="education" className="border-b border-line">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:px-8 lg:py-20">
         <div>
-          <p className="text-[13px] text-muted">Education</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-[2rem]">
+          <p className="flex items-center gap-2 text-[13px] text-muted">
+            <Icon name="grad" className="h-4 w-4" />
+            Education
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
             Technical foundation, dual graduate path
           </h2>
           <div className="mt-8 grid gap-4">
@@ -17,12 +21,12 @@ export function Education() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className={`border border-line p-6 ${item.onDark ? "bg-davis text-white" : "bg-surface"}`}
+                className={`border border-line p-5 sm:p-6 ${item.onDark ? "bg-davis text-white" : "bg-surface"}`}
               >
                 <Logo
                   src={item.logo}
                   alt={item.school}
-                  className="h-8 w-auto max-w-[13rem] object-contain object-left"
+                  className="h-7 w-auto max-w-[min(13rem,70vw)] object-contain object-left sm:h-8"
                 />
                 <p className={`mt-5 text-[12px] ${item.onDark ? "text-white/70" : "text-muted"}`}>
                   {item.note}
@@ -43,8 +47,11 @@ export function Education() {
         </div>
 
         <div id="skills">
-          <p className="text-[13px] text-muted">Capabilities</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-[2rem]">
+          <p className="flex items-center gap-2 text-[13px] text-muted">
+            <Icon name="chart" className="h-4 w-4" />
+            Capabilities
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
             How I work
           </h2>
           <div className="mt-8 space-y-8">

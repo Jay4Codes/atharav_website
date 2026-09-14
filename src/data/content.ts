@@ -7,9 +7,30 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/atharav-samant",
   headline: "MBA & M.S. Business Analytics and AI",
   school: "The University of Texas at Dallas",
-  status: "Seeking consulting internships",
+  photo: "/images/atharav.jpg",
+  url: "https://atharavsamant.com",
   summary:
     "I work at the intersection of industrial operations, analytics, and product — building tools that turn plant data into decisions leadership can act on.",
+  seoDescription:
+    "Atharav Samant is an MBA and M.S. Business Analytics and AI candidate at The University of Texas at Dallas. Former Project Manager at Abhitech Energycon, he built AbhiStat, AbhiPMT, and SmartCoke for manufacturing, steel plants, and power utilities.",
+  keywords: [
+    "Atharav Samant",
+    "Atharav Ganesh Samant",
+    "MBA UT Dallas",
+    "M.S. Business Analytics and AI",
+    "Naveen Jindal School of Management",
+    "UC Davis Computer Science",
+    "Abhitech Energycon",
+    "AbhiStat",
+    "AbhiPMT",
+    "SmartCoke",
+    "industrial analytics",
+    "manufacturing AI",
+    "fuel blending optimization",
+    "project management",
+    "consulting",
+    "Richardson TX",
+  ],
 } as const;
 
 export const nav = [
@@ -48,21 +69,25 @@ export const metrics = [
     value: "5 min",
     label: "Product analysis cycle",
     detail: "Down from a 5-hour manual workflow via AbhiStat",
+    icon: "chart",
   },
   {
     value: "96%",
     label: "Software cost avoided",
     detail: "In-house platform adopted by ~400 employees",
+    icon: "ops",
   },
   {
     value: "4 min",
     label: "Field reporting time",
     detail: "Down from 45 minutes; reviews now hours, not days",
+    icon: "field",
   },
   {
     value: "210–800 MW",
     label: "Plant scale served",
     detail: "Steel plants and power utilities across the portfolio",
+    icon: "plant",
   },
 ] as const;
 

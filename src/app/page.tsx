@@ -4,6 +4,7 @@ import { Experience } from "@/components/experience";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { Work } from "@/components/work";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

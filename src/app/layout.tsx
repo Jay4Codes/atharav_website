@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import { JsonLd } from "@/components/json-ld";
 import { site } from "@/data/content";
 import "./globals.css";
 
@@ -20,17 +21,43 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.headline}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.headline}`,
+    template: `%s | ${site.name}`,
   },
-  description: site.summary,
-  authors: [{ name: site.name }],
+  description: site.seoDescription,
+  keywords: [...site.keywords],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: `${site.name} — ${site.headline}`,
-    description: site.summary,
-    type: "website",
+    title: `${site.name} | ${site.headline}`,
+    description: site.seoDescription,
+    type: "profile",
+    url: site.url,
     locale: "en_US",
+    siteName: site.name,
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${site.name}, ${site.headline}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | ${site.headline}`,
+    description: site.seoDescription,
+    images: ["/og.jpg"],
   },
 };
 
@@ -40,7 +67,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${sourceSans.variable} ${sourceSerif.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-bg text-ink">{children}</body>
+      <body className="min-h-full bg-bg text-ink">
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }
