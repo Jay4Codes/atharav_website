@@ -13,16 +13,14 @@ export function ScrollToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!visible) {
-    return null;
-  }
-
   return (
     <button
       type="button"
       aria-label="Scroll to top"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed z-50 flex h-11 w-11 items-center justify-center border border-line bg-navy text-white shadow-sm transition-colors hover:bg-navy-2 bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))]"
+      className={`btn-primary fixed z-50 flex h-11 w-11 items-center justify-center bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] ${
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
+      }`}
     >
       <Icon name="arrowUp" className="h-5 w-5" />
     </button>

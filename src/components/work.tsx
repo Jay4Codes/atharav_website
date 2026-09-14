@@ -9,7 +9,7 @@ export function Work() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-[13px] text-muted">Selected work</p>
+            <p className="label">Selected work</p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
               Products built inside industrial operations
             </h2>
@@ -24,9 +24,9 @@ export function Work() {
             <article
               key={project.id}
               id={project.id}
-              className="flex flex-col overflow-hidden border border-line bg-surface"
+              className="card group flex flex-col overflow-hidden"
             >
-              <div className="relative h-36 sm:h-40">
+              <div className="media-zoom relative h-36 sm:h-40">
                 <ProjectVisual kind={project.visual} />
                 <div className="absolute top-3 left-3 flex items-center gap-2 bg-white/95 px-2.5 py-1.5">
                   <Logo
@@ -42,7 +42,10 @@ export function Work() {
               <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                   <h3 className="flex items-center gap-2 text-lg font-semibold tracking-tight sm:text-xl">
-                    <Icon name={project.visual} className="h-4 w-4 shrink-0 text-navy" />
+                    <Icon
+                      name={project.visual}
+                      className="h-4 w-4 shrink-0 text-navy transition-colors group-hover:text-accent"
+                    />
                     {project.name}
                   </h3>
                   <p className="mono text-[13px] text-accent">{project.impact}</p>
@@ -59,10 +62,7 @@ export function Work() {
                 </ul>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="border border-line bg-bg px-2.5 py-1 text-[11px] text-ink-soft"
-                    >
+                    <span key={tag} className="chip px-2.5 py-1 text-[11px] text-ink-soft">
                       {tag}
                     </span>
                   ))}

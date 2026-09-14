@@ -7,7 +7,7 @@ export function Education() {
     <section id="education" className="border-b border-line">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:px-8 lg:py-20">
         <div>
-          <p className="flex items-center gap-2 text-[13px] text-muted">
+          <p className="label">
             <Icon name="grad" className="h-4 w-4" />
             Education
           </p>
@@ -21,7 +21,9 @@ export function Education() {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className={`border border-line p-5 sm:p-6 ${item.onDark ? "bg-davis text-white" : "bg-surface"}`}
+                className={`card block p-5 sm:p-6 ${
+                  item.onDark ? "navy-panel text-white hover:border-accent" : ""
+                }`}
               >
                 <Logo
                   src={item.logo}
@@ -47,7 +49,7 @@ export function Education() {
         </div>
 
         <div id="skills">
-          <p className="flex items-center gap-2 text-[13px] text-muted">
+          <p className="label">
             <Icon name="chart" className="h-4 w-4" />
             Capabilities
           </p>
@@ -60,11 +62,10 @@ export function Education() {
                 <h3 className="text-sm font-semibold">{group.group}</h3>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="border border-line bg-surface px-3 py-1.5 text-sm text-ink-soft"
-                    >
-                      {item}
+                    <li key={item}>
+                      <span className="chip inline-block cursor-default px-3 py-1.5 text-sm text-ink-soft">
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>

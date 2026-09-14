@@ -6,7 +6,7 @@ export function Experience() {
   return (
     <section id="experience" className="border-b border-line bg-surface">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <p className="flex items-center gap-2 text-[13px] text-muted">
+        <p className="label">
           <Icon name="briefcase" className="h-4 w-4" />
           Experience
         </p>
@@ -16,19 +16,21 @@ export function Experience() {
 
         <div className="mt-8 space-y-8 md:mt-10">
           {experience.map((job) => (
-            <article key={job.company} className="border border-line">
+            <article key={job.company} className="card overflow-hidden">
               <div className="flex flex-col gap-3 border-b border-line px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
                 <a
                   href={job.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-4"
+                  className="group flex items-center gap-4"
                 >
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-line bg-white">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center border border-line bg-white transition-colors group-hover:border-navy">
                     <Logo src={job.logo} alt={job.company} className="h-8 w-8 object-contain" />
                   </span>
                   <span>
-                    <span className="block text-base font-semibold sm:text-lg">{job.company}</span>
+                    <span className="block text-base font-semibold transition-colors group-hover:text-navy sm:text-lg">
+                      {job.company}
+                    </span>
                     <span className="flex items-center gap-1.5 text-sm text-muted">
                       <Icon name="pin" className="h-3.5 w-3.5" />
                       {job.location}
@@ -41,7 +43,7 @@ export function Experience() {
                 {job.roles.map((role) => (
                   <div
                     key={role.title}
-                    className="grid gap-4 px-4 py-6 sm:px-7 md:grid-cols-[14rem_1fr] lg:grid-cols-[16rem_1fr]"
+                    className="grid gap-4 px-4 py-6 transition-colors hover:bg-bg/80 sm:px-7 md:grid-cols-[14rem_1fr] lg:grid-cols-[16rem_1fr]"
                   >
                     <div>
                       <p className="font-semibold">{role.title}</p>
@@ -66,8 +68,8 @@ export function Experience() {
         </div>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <aside className="border border-line bg-bg px-5 py-6 sm:px-8 sm:py-7">
-            <p className="flex items-center gap-2 text-[13px] text-muted">
+          <aside className="surface-wash border border-line px-5 py-6 sm:px-8 sm:py-7">
+            <p className="label">
               <Icon name="mic" className="h-4 w-4" />
               Leadership & presentations
             </p>
@@ -83,7 +85,7 @@ export function Experience() {
               href={partner.href}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-4 border border-line bg-white px-5 py-6 sm:gap-5 sm:px-6 sm:py-7"
+              className="card row-link flex items-center gap-4 px-5 py-6 sm:gap-5 sm:px-6 sm:py-7"
             >
               <Logo
                 src={partner.src}

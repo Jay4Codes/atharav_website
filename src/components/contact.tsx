@@ -3,9 +3,9 @@ import { site } from "@/data/content";
 
 export function Contact() {
   return (
-    <section id="contact" className="border-b border-line bg-navy text-white">
+    <section id="contact" className="navy-panel border-b border-line text-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <p className="flex items-center gap-2 text-[13px] text-white/60">
+        <p className="flex items-center gap-2 text-[13px] text-white/70">
           <Icon name="mail" className="h-4 w-4" />
           Contact
         </p>
@@ -19,7 +19,7 @@ export function Contact() {
         <div className="mt-8 grid gap-px bg-white/15 md:grid-cols-3">
           <a
             href={`mailto:${site.email}`}
-            className="flex min-h-24 items-start gap-3 bg-navy p-5 transition-colors hover:bg-navy-2 sm:p-6"
+            className="row-link-dark flex min-h-24 items-start gap-3 bg-transparent p-5 sm:p-6"
           >
             <Icon name="mail" className="mt-0.5 h-5 w-5 shrink-0 text-white/70" />
             <span>
@@ -31,7 +31,7 @@ export function Contact() {
             href={site.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="flex min-h-24 items-start gap-3 bg-navy p-5 transition-colors hover:bg-navy-2 sm:p-6"
+            className="row-link-dark flex min-h-24 items-start gap-3 bg-transparent p-5 sm:p-6"
           >
             <Icon name="linkedin" className="mt-0.5 h-5 w-5 shrink-0 text-white/70" />
             <span>
@@ -41,7 +41,7 @@ export function Contact() {
           </a>
           <a
             href="tel:+12142237218"
-            className="flex min-h-24 items-start gap-3 bg-navy p-5 transition-colors hover:bg-navy-2 sm:p-6"
+            className="row-link-dark flex min-h-24 items-start gap-3 bg-transparent p-5 sm:p-6"
           >
             <Icon name="phone" className="mt-0.5 h-5 w-5 shrink-0 text-white/70" />
             <span>

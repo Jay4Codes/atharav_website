@@ -10,7 +10,16 @@
   --navy: #0c1b2e;
   --navy-2: #16324f;
   --accent: #c45c12;
+  --accent-2: #e07a2f;
   --davis: #022851;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 220ms;
+  --duration-slow: 480ms;
+  --grad-navy: linear-gradient(165deg, #1a3a58 0%, #0c1b2e 52%, #081421 100%);
+  --grad-navy-btn: linear-gradient(180deg, #1c3f5f 0%, #0c1b2e 100%);
+  --grad-accent: linear-gradient(90deg, var(--accent) 0%, var(--navy) 100%);
+  --grad-wash: linear-gradient(180deg, #ffffff 0%, #f4f5f7 100%);
+  --shadow-hover: 0 10px 28px color-mix(in srgb, var(--navy) 12%, transparent);
 }
 
 @theme inline {
@@ -37,10 +46,20 @@ html {
   html {
     scroll-behavior: auto;
   }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(1200px 420px at 0% -10%, color-mix(in srgb, var(--navy) 8%, transparent), transparent 60%),
+    radial-gradient(900px 380px at 100% 0%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 55%),
+    var(--bg);
   color: var(--ink);
   font-family: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
 }
@@ -49,10 +68,165 @@ body {
   background: color-mix(in srgb, var(--navy) 16%, transparent);
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .display {
   font-family: var(--font-source-serif), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 .mono {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.btn-primary,
+.btn-secondary,
+.nav-link,
+.card,
+.chip,
+.row-link,
+.row-link-dark {
+  transition:
+    background-color var(--duration) var(--ease),
+    color var(--duration) var(--ease),
+    border-color var(--duration) var(--ease),
+    box-shadow var(--duration) var(--ease),
+    transform var(--duration) var(--ease),
+    opacity var(--duration) var(--ease);
+}
+
+.btn-primary {
+  background: var(--grad-navy-btn);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: var(--navy);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.45rem;
+  height: 1.5px;
+  width: 0;
+  background: var(--grad-accent);
+  transition: width var(--duration) var(--ease);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--ink);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--navy) 28%, var(--line));
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.chip:hover {
+  border-color: color-mix(in srgb, var(--navy) 35%, var(--line));
+  color: var(--navy);
+  background: color-mix(in srgb, var(--navy) 6%, white);
+}
+
+.row-link:hover {
+  background: color-mix(in srgb, var(--navy) 6%, var(--surface));
+}
+
+.row-link-dark:hover {
+  background: color-mix(in srgb, white 8%, var(--navy));
+}
+
+.navy-panel {
+  background: var(--grad-navy);
+}
+
+.surface-wash {
+  background: var(--grad-wash);
+}
+
+.media-zoom {
+  overflow: hidden;
+}
+
+.media-zoom > * {
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+.card:hover .media-zoom > *,
+.media-zoom:hover > * {
+  transform: scale(1.04);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise var(--duration-slow) var(--ease) both;
+}
+
+.d1 {
+  animation-delay: 60ms;
+}
+.d2 {
+  animation-delay: 120ms;
+}
+.d3 {
+  animation-delay: 180ms;
+}
+.d4 {
+  animation-delay: 240ms;
 }

@@ -4,7 +4,13 @@ export function ProjectVisual({ kind }: { kind: VisualId }) {
   if (kind === "chart") {
     return (
       <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
-        <rect width="320" height="160" fill="#0c1b2e" />
+        <defs>
+          <linearGradient id="chartBg" x1="0" y1="0" x2="320" y2="160" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#16324f" />
+            <stop offset="1" stopColor="#0c1b2e" />
+          </linearGradient>
+        </defs>
+        <rect width="320" height="160" fill="url(#chartBg)" />
         <path d="M28 118h264" stroke="#ffffff" strokeOpacity="0.15" />
         <path d="M28 86h264" stroke="#ffffff" strokeOpacity="0.08" />
         <path d="M28 54h264" stroke="#ffffff" strokeOpacity="0.08" />
@@ -26,7 +32,13 @@ export function ProjectVisual({ kind }: { kind: VisualId }) {
   if (kind === "ops") {
     return (
       <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
-        <rect width="320" height="160" fill="#16324f" />
+        <defs>
+          <linearGradient id="opsBg" x1="0" y1="0" x2="0" y2="160" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#1c3f5f" />
+            <stop offset="1" stopColor="#0c1b2e" />
+          </linearGradient>
+        </defs>
+        <rect width="320" height="160" fill="url(#opsBg)" />
         <rect x="28" y="28" width="80" height="104" rx="2" fill="#0c1b2e" />
         <rect x="120" y="28" width="80" height="104" rx="2" fill="#0c1b2e" />
         <rect x="212" y="28" width="80" height="104" rx="2" fill="#0c1b2e" />
@@ -46,7 +58,13 @@ export function ProjectVisual({ kind }: { kind: VisualId }) {
   if (kind === "plant") {
     return (
       <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
-        <rect width="320" height="160" fill="#0c1b2e" />
+        <defs>
+          <linearGradient id="plantBg" x1="0" y1="160" x2="320" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#0c1b2e" />
+            <stop offset="1" stopColor="#1a3a58" />
+          </linearGradient>
+        </defs>
+        <rect width="320" height="160" fill="url(#plantBg)" />
         <rect x="36" y="86" width="248" height="42" fill="#16324f" />
         <rect x="56" y="58" width="36" height="70" fill="#2a455f" />
         <rect x="108" y="40" width="44" height="88" fill="#2a455f" />
@@ -65,7 +83,13 @@ export function ProjectVisual({ kind }: { kind: VisualId }) {
 
   return (
     <svg viewBox="0 0 320 160" className="h-full w-full" aria-hidden="true">
-      <rect width="320" height="160" fill="#16324f" />
+      <defs>
+        <linearGradient id="fieldBg" x1="320" y1="0" x2="0" y2="160" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#16324f" />
+          <stop offset="1" stopColor="#0c1b2e" />
+        </linearGradient>
+      </defs>
+      <rect width="320" height="160" fill="url(#fieldBg)" />
       <rect x="40" y="36" width="150" height="92" rx="2" fill="#0c1b2e" />
       <rect x="52" y="48" width="88" height="8" fill="#ffffff" opacity="0.7" />
       <rect x="52" y="64" width="126" height="6" fill="#ffffff" opacity="0.2" />
