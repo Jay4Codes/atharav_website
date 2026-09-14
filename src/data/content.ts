@@ -34,10 +34,10 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+  { href: "#work", label: "Work", icon: "ops" },
+  { href: "#experience", label: "Experience", icon: "briefcase" },
+  { href: "#education", label: "Education", icon: "grad" },
+  { href: "#contact", label: "Contact", icon: "mail" },
 ] as const;
 
 export const affiliations = [

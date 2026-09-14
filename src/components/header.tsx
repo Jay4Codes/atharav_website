@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Icon } from "@/components/icon";
 import { nav, site } from "@/data/content";
 
 export function Header() {
@@ -16,13 +17,14 @@ export function Header() {
           <span className="text-sm font-semibold tracking-tight">{site.name}</span>
         </a>
 
-        <nav className="hidden items-center gap-5 md:flex lg:gap-7">
+        <nav className="hidden items-center gap-4 md:flex lg:gap-6">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="inline-flex min-h-11 items-center text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
+              className="inline-flex min-h-11 items-center gap-1.5 text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
             >
+              <Icon name={item.icon} className="h-4 w-4" />
               {item.label}
             </a>
           ))}
@@ -51,9 +53,10 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="flex min-h-11 items-center text-sm text-ink-soft"
+                className="flex min-h-11 items-center gap-2.5 text-sm text-ink-soft"
                 onClick={() => setOpen(false)}
               >
+                <Icon name={item.icon} className="h-4 w-4" />
                 {item.label}
               </a>
             ))}
