@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-type IconName =
+export type IconName =
   | "chart"
   | "ops"
   | "plant"
@@ -16,7 +16,30 @@ type IconName =
   | "clock"
   | "arrowOut"
   | "user"
-  | "doc";
+  | "doc"
+  | "codeBraces"
+  | "coffee"
+  | "table"
+  | "trend"
+  | "nodes"
+  | "layers"
+  | "chevrons"
+  | "cube"
+  | "spark"
+  | "checklist"
+  | "grid"
+  | "people"
+  | "flag"
+  | "chat"
+  | "refresh"
+  | "shuttle"
+  | "racquet"
+  | "pawn"
+  | "paddle"
+  | "ball"
+  | "bike"
+  | "calendar"
+  | "camera";
 
 const paths: Record<IconName, ReactNode> = {
   chart: (
@@ -130,6 +153,173 @@ const paths: Record<IconName, ReactNode> = {
       <path d="M14 4v4h4" />
       <path d="M10 13h6" />
       <path d="M10 17h4" />
+    </>
+  ),
+  codeBraces: (
+    <>
+      <path d="M9 6c-2.4 1.2-2.6 10.8 0 12" />
+      <path d="M15 6c2.4 1.2 2.6 10.8 0 12" />
+    </>
+  ),
+  coffee: (
+    <>
+      <path d="M6 9h10v6a3.5 3.5 0 0 1-3.5 3.5h-3A3.5 3.5 0 0 1 6 15V9Z" />
+      <path d="M16 11h1.8a2.2 2.2 0 1 1 0 4.4H16" />
+      <path d="M9 5.5c.4-1 1.2-1 1.6 0" />
+      <path d="M12.2 5.5c.4-1 1.2-1 1.6 0" />
+    </>
+  ),
+  table: (
+    <>
+      <rect x="4" y="5" width="16" height="14" rx="1.5" />
+      <path d="M4 10h16" />
+      <path d="M4 15h16" />
+      <path d="M10 5v14" />
+    </>
+  ),
+  trend: (
+    <>
+      <path d="M4 19h16" />
+      <path d="M4 19V6" />
+      <polyline points="7,15 11,10 14,12.5 20,6" />
+    </>
+  ),
+  nodes: (
+    <>
+      <circle cx="6.5" cy="7.5" r="2.2" />
+      <circle cx="17.5" cy="7.5" r="2.2" />
+      <circle cx="12" cy="17" r="2.2" />
+      <path d="M8.3 8.8 10.4 15" />
+      <path d="M15.7 8.8 13.6 15" />
+      <path d="M8.7 7.5h6.6" />
+    </>
+  ),
+  layers: (
+    <>
+      <rect x="5" y="4" width="14" height="6.5" rx="1" />
+      <rect x="5" y="13.5" width="14" height="6.5" rx="1" />
+    </>
+  ),
+  chevrons: (
+    <>
+      <path d="M8 7 4 12l4 5" />
+      <path d="M16 7l4 5-4 5" />
+    </>
+  ),
+  cube: (
+    <>
+      <path d="M12 4.5 19.5 8.5v7L12 19.5 4.5 15.5v-7Z" />
+      <path d="M12 4.5v7.5" />
+      <path d="M12 12 19.5 8.5" />
+      <path d="M12 12 4.5 8.5" />
+    </>
+  ),
+  spark: (
+    <>
+      <rect x="4.5" y="8" width="10.5" height="10.5" rx="1.2" />
+      <path d="M16.5 7.5 20 4" />
+      <path d="M20 4v3.2" />
+      <path d="M20 4h-3.2" />
+    </>
+  ),
+  checklist: (
+    <>
+      <rect x="5" y="4" width="14" height="16" rx="1.5" />
+      <path d="M8 9.2 9.4 10.6 12.2 7.8" />
+      <path d="M8 13h8" />
+      <path d="M8 16.5h5.5" />
+    </>
+  ),
+  grid: (
+    <>
+      <rect x="4" y="4" width="7" height="7" rx="1" />
+      <rect x="13" y="4" width="7" height="7" rx="1" />
+      <rect x="4" y="13" width="7" height="7" rx="1" />
+      <rect x="13" y="13" width="7" height="7" rx="1" />
+    </>
+  ),
+  people: (
+    <>
+      <circle cx="9" cy="8" r="2.4" />
+      <path d="M4.2 18.5c.7-3 2.8-4.7 4.8-4.7s4.1 1.7 4.8 4.7" />
+      <circle cx="16.2" cy="9" r="2" />
+      <path d="M16.2 13.2c2 0 3.5 1.2 4.2 3.3" />
+    </>
+  ),
+  flag: (
+    <>
+      <path d="M6 4v16" />
+      <path d="M6 5h11l-2.2 3.2L17 11.5H6" />
+    </>
+  ),
+  chat: (
+    <>
+      <path d="M5 6h14v9H9l-4 3.5V6Z" />
+    </>
+  ),
+  refresh: (
+    <>
+      <path d="M7.2 8.2A6 6 0 0 1 18 9.5" />
+      <path d="M18 6.2V9.5h-3.2" />
+      <path d="M16.8 15.8A6 6 0 0 1 6 14.5" />
+      <path d="M6 17.8V14.5h3.2" />
+    </>
+  ),
+  shuttle: (
+    <>
+      <circle cx="12" cy="16.2" r="2.4" />
+      <path d="M12 13.8 8.2 5.2" />
+      <path d="M12 13.8 12 4.5" />
+      <path d="M12 13.8 15.8 5.2" />
+    </>
+  ),
+  racquet: (
+    <>
+      <ellipse cx="14.2" cy="8.2" rx="5.8" ry="5" />
+      <path d="M10 12 5.2 20.2" />
+    </>
+  ),
+  pawn: (
+    <>
+      <circle cx="12" cy="5.6" r="2" />
+      <path d="M9.2 13.2c0-2.1 1.2-3.4 2.8-3.4s2.8 1.3 2.8 3.4" />
+      <path d="M8.2 13.4h7.6L18 20.2H6z" />
+    </>
+  ),
+  paddle: (
+    <>
+      <ellipse cx="10" cy="9" rx="5.8" ry="5.2" />
+      <circle cx="9.2" cy="9" r="1.5" />
+      <path d="M14.2 12.4 19.2 20" />
+    </>
+  ),
+  ball: (
+    <>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M12 8.2 14.8 10.2 13.7 13.6h-3.4L9.2 10.2Z" />
+    </>
+  ),
+  bike: (
+    <>
+      <circle cx="6.5" cy="16" r="3" />
+      <circle cx="17.5" cy="16" r="3" />
+      <path d="M6.5 16 11.2 8.2h3.4L18 16" />
+      <path d="M11.2 8.2 9.4 16" />
+    </>
+  ),
+  calendar: (
+    <>
+      <rect x="4" y="6" width="16" height="14" rx="1.5" />
+      <path d="M8 4v4" />
+      <path d="M16 4v4" />
+      <path d="M4 11h16" />
+    </>
+  ),
+  camera: (
+    <>
+      <rect x="3" y="8" width="18" height="12" rx="2" />
+      <circle cx="12" cy="14" r="3.4" />
+      <path d="M9 8 10.4 5h3.2L15 8" />
     </>
   ),
 };

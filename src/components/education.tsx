@@ -65,12 +65,19 @@ export function Education() {
           <div className="mt-8 space-y-8">
             {skills.map((group) => (
               <div key={group.group}>
-                <h3 className="text-sm font-semibold">{group.group}</h3>
+                <h3 className="flex items-center gap-2 text-sm font-semibold">
+                  <Icon name={group.icon} className="h-4 w-4 text-navy" />
+                  {group.group}
+                </h3>
                 <ul className="mt-3 flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <li key={item}>
-                      <span className="chip inline-block cursor-default px-3 py-1.5 text-sm text-ink-soft">
-                        {item}
+                    <li key={item.label}>
+                      <span className="chip inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-ink-soft">
+                        <Icon
+                          name={item.icon}
+                          className="h-3.5 w-3.5 text-navy transition-colors"
+                        />
+                        {item.label}
                       </span>
                     </li>
                   ))}
