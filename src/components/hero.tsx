@@ -54,17 +54,30 @@ export function Hero() {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              className={`group flex min-h-[4.75rem] items-center gap-3 border-b border-line px-4 py-4 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 sm:gap-4 sm:px-6 lg:px-8 ${
+              className={`group flex min-h-[5.25rem] items-center gap-3 border-b border-line px-4 py-4 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 sm:gap-4 sm:px-6 lg:px-8 ${
                 item.onDark ? "row-link-dark bg-davis" : "row-link bg-surface"
               }`}
             >
               <Logo
                 src={item.src}
-                alt={item.name}
-                className="h-7 w-auto max-w-[8.5rem] object-contain object-left transition-transform duration-300 group-hover:scale-105 sm:h-8 sm:max-w-[10rem]"
+                alt=""
+                className="h-8 w-auto max-w-[7.5rem] object-contain object-left transition-transform duration-300 group-hover:scale-105 sm:h-9 sm:max-w-[8.5rem]"
               />
-              <span className={`text-[12px] leading-5 ${item.onDark ? "text-white/80" : "text-muted"}`}>
-                {item.role}
+              <span className="min-w-0">
+                <span
+                  className={`block text-sm font-semibold leading-5 sm:text-[15px] ${
+                    item.onDark ? "text-white" : "text-ink"
+                  }`}
+                >
+                  {item.name}
+                </span>
+                <span
+                  className={`mt-0.5 block text-[13px] leading-5 sm:text-sm ${
+                    item.onDark ? "text-white/80" : "text-muted"
+                  }`}
+                >
+                  {item.role}
+                </span>
               </span>
             </a>
           ))}
