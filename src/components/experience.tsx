@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { RichText } from "@/components/rich-text";
@@ -44,7 +45,11 @@ export function Experience() {
                 {job.roles.map((role) => (
                   <div
                     key={role.title}
-                    className="grid gap-4 px-4 py-6 transition-colors hover:bg-bg/80 sm:px-7 md:grid-cols-[14rem_1fr] lg:grid-cols-[16rem_1fr]"
+                    className={`grid gap-4 px-4 py-6 transition-colors hover:bg-bg/80 sm:px-7 md:grid-cols-[14rem_1fr] ${
+                      "certificate" in role
+                        ? "lg:grid-cols-[16rem_1fr_7.25rem]"
+                        : "lg:grid-cols-[16rem_1fr]"
+                    }`}
                   >
                     <div>
                       <p className="font-semibold">{role.title}</p>
@@ -52,17 +57,6 @@ export function Experience() {
                         <Icon name="clock" className="h-3.5 w-3.5" />
                         {role.dates}
                       </p>
-                      {"certificate" in role ? (
-                        <a
-                          href={role.certificate}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-medium text-navy transition-colors hover:text-accent"
-                        >
-                          <Icon name="doc" className="h-3.5 w-3.5" />
-                          Certificate
-                        </a>
-                      ) : null}
                     </div>
                     <ul className="space-y-3 text-[15px] leading-7 text-ink-soft">
                       {role.bullets.map((bullet) => (
@@ -74,6 +68,28 @@ export function Experience() {
                         </li>
                       ))}
                     </ul>
+                    {"certificate" in role ? (
+                      <a
+                        href={role.certificate}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group/cert w-24 shrink-0 justify-self-start lg:w-full"
+                      >
+                        <span className="media-zoom relative block aspect-[3/4] overflow-hidden border border-line bg-white transition-[border-color,box-shadow] duration-200 ease-[var(--ease)] group-hover/cert:border-navy group-hover/cert:shadow-[var(--shadow-hover)]">
+                          <Image
+                            src={role.certificate}
+                            alt={`${job.company} internship certificate`}
+                            fill
+                            sizes="112px"
+                            className="object-cover object-top"
+                          />
+                        </span>
+                        <span className="mt-2 inline-flex items-center gap-1.5 text-[12px] font-medium text-navy transition-colors group-hover/cert:text-accent">
+                          <Icon name="doc" className="h-3.5 w-3.5" />
+                          Certificate
+                        </span>
+                      </a>
+                    ) : null}
                   </div>
                 ))}
               </div>
