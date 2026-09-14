@@ -46,11 +46,41 @@ export function Work() {
                       name={project.visual}
                       className="h-4 w-4 shrink-0 text-navy transition-colors group-hover:text-accent"
                     />
-                    {project.name}
+                    {"href" in project ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
+                      >
+                        {project.name}
+                        <Icon
+                          name="arrowOut"
+                          className="h-3.5 w-3.5 text-muted transition-colors group-hover:text-accent"
+                        />
+                      </a>
+                    ) : (
+                      project.name
+                    )}
                   </h3>
                   <p className="mono text-[13px] text-accent">{project.impact}</p>
                 </div>
-                <p className="mt-1 text-sm text-muted">{project.kind}</p>
+                <p className="mt-1 text-sm text-muted">
+                  {project.kind}
+                  {"href" in project ? (
+                    <>
+                      {" · "}
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mono text-[12px] text-navy transition-colors hover:text-accent"
+                      >
+                        {new URL(project.href).host}
+                      </a>
+                    </>
+                  ) : null}
+                </p>
                 <p className="mt-4 text-[15px] leading-7 text-ink-soft">{project.summary}</p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-muted">
                   {project.details.map((detail) => (

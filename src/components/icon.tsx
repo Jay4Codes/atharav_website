@@ -13,7 +13,8 @@ type IconName =
   | "briefcase"
   | "grad"
   | "mic"
-  | "clock";
+  | "clock"
+  | "arrowOut";
 
 const paths: Record<IconName, ReactNode> = {
   chart: (
@@ -107,6 +108,12 @@ const paths: Record<IconName, ReactNode> = {
     <>
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v5l3 2" />
+    </>
+  ),
+  arrowOut: (
+    <>
+      <path d="M7 17 17 7" />
+      <path d="M9 7h8v8" />
     </>
   ),
 };
