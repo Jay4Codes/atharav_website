@@ -1,7 +1,7 @@
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { Portrait } from "@/components/portrait";
-import { affiliations, metrics, site } from "@/data/content";
+import { affiliations, site } from "@/data/content";
 
 export function Hero() {
   return (
@@ -67,29 +67,6 @@ export function Hero() {
             </a>
           ))}
         </div>
-      </div>
-
-      <div className="border-t border-line surface-wash">
-        <dl className="mx-auto grid max-w-6xl sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map((metric, index) => (
-            <div
-              key={metric.label}
-              className={`group border-b border-line px-4 py-5 transition-colors hover:bg-white sm:px-6 lg:px-8 lg:border-b-0 ${
-                index % 2 === 0 ? "sm:border-r" : "sm:border-r-0"
-              } ${index !== 3 ? "lg:border-r" : "lg:border-r-0"}`}
-            >
-              <dt className="flex items-center gap-2 text-[13px] text-muted">
-                <Icon
-                  name={metric.icon}
-                  className="h-4 w-4 shrink-0 text-navy transition-transform duration-300 group-hover:-translate-y-0.5"
-                />
-                {metric.label}
-              </dt>
-              <dd className="mono mt-2 text-xl text-navy sm:text-2xl">{metric.value}</dd>
-              <p className="mt-2 text-[12px] leading-5 text-muted">{metric.detail}</p>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

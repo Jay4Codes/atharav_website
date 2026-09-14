@@ -87,33 +87,6 @@ export const about = {
   ],
 } as const;
 
-export const metrics = [
-  {
-    value: "5 min",
-    label: "Product analysis cycle",
-    detail: "Down from a 5-hour manual workflow via AbhiStat",
-    icon: "chart",
-  },
-  {
-    value: "96%",
-    label: "Software cost avoided",
-    detail: "In-house platform adopted by ~400 employees",
-    icon: "ops",
-  },
-  {
-    value: "4 min",
-    label: "Field reporting time",
-    detail: "Down from 45 minutes; reviews now hours, not days",
-    icon: "field",
-  },
-  {
-    value: "210–800 MW",
-    label: "Plant scale served",
-    detail: "Steel plants and power utilities across the portfolio",
-    icon: "plant",
-  },
-] as const;
-
 export const projects = [
   {
     id: "abhistat",
