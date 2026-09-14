@@ -37,7 +37,7 @@ export function Experience() {
                     </span>
                   </span>
                 </a>
-                <p className="text-sm text-muted">Energy conservation · steel & power</p>
+                <p className="text-sm text-muted">{job.focus}</p>
               </div>
               <div className="divide-y divide-line">
                 {job.roles.map((role) => (
@@ -51,6 +51,17 @@ export function Experience() {
                         <Icon name="clock" className="h-3.5 w-3.5" />
                         {role.dates}
                       </p>
+                      {"certificate" in role ? (
+                        <a
+                          href={role.certificate}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-medium text-navy transition-colors hover:text-accent"
+                        >
+                          <Icon name="doc" className="h-3.5 w-3.5" />
+                          Certificate
+                        </a>
+                      ) : null}
                     </div>
                     <ul className="space-y-3 text-[15px] leading-7 text-ink-soft">
                       {role.bullets.map((bullet) => (

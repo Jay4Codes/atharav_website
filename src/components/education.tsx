@@ -40,6 +40,11 @@ export function Education() {
                 <p className={`mt-3 text-[15px] leading-6 ${item.onDark ? "text-white/90" : "text-ink-soft"}`}>
                   {item.degree}
                 </p>
+                {"detail" in item ? (
+                  <p className={`mt-3 text-sm leading-6 ${item.onDark ? "text-white/75" : "text-muted"}`}>
+                    {item.detail}
+                  </p>
+                ) : null}
                 <p className={`mono mt-3 text-[12px] ${item.onDark ? "text-white/60" : "text-muted"}`}>
                   {item.dates}
                 </p>

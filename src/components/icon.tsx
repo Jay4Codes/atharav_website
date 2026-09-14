@@ -14,7 +14,9 @@ type IconName =
   | "grad"
   | "mic"
   | "clock"
-  | "arrowOut";
+  | "arrowOut"
+  | "user"
+  | "doc";
 
 const paths: Record<IconName, ReactNode> = {
   chart: (
@@ -114,6 +116,20 @@ const paths: Record<IconName, ReactNode> = {
     <>
       <path d="M7 17 17 7" />
       <path d="M9 7h8v8" />
+    </>
+  ),
+  user: (
+    <>
+      <circle cx="12" cy="8" r="3.2" />
+      <path d="M5.5 19c.8-3.2 3.3-5 6.5-5s5.7 1.8 6.5 5" />
+    </>
+  ),
+  doc: (
+    <>
+      <path d="M7 4h7l4 4v12H7z" />
+      <path d="M14 4v4h4" />
+      <path d="M10 13h6" />
+      <path d="M10 17h4" />
     </>
   ),
 };

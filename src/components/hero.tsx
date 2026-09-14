@@ -24,15 +24,14 @@ export function Hero() {
             {site.summary}
           </p>
           <p className="rise d3 mt-4 max-w-xl text-sm leading-6 text-muted sm:text-[15px] sm:leading-7">
-            {site.headline} at {site.school}. Previously Project Manager at
-            Abhitech Energycon, working with steel plants and power utilities.
+            {site.headline} at {site.school}. {site.seeking}
           </p>
           <div className="rise d4 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
-              href="#work"
+              href="#about"
               className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm font-semibold"
             >
-              Selected work
+              About Atharav
             </a>
             <a
               href={`mailto:${site.email}`}

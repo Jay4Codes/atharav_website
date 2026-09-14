@@ -26,7 +26,7 @@ export function Header() {
               href={item.href}
               className="nav-link inline-flex min-h-11 items-center gap-1.5 text-[13px] font-medium text-ink-soft"
             >
-              <Icon name={item.icon} className="h-4 w-4" />
+              <Icon name={item.icon} className="hidden h-4 w-4 lg:inline" />
               {item.label}
             </a>
           ))}

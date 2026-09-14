@@ -9,10 +9,12 @@ export const site = {
   school: "The University of Texas at Dallas",
   photo: "/images/atharav.jpg",
   url: "https://atharavsamant.com",
+  seeking:
+    "Actively seeking internships in consulting, technology strategy, business analytics, product management, and digital transformation.",
   summary:
-    "I work at the intersection of industrial operations, analytics, and product — building tools that turn plant data into decisions leadership can act on.",
+    "I am an MBA and M.S. Business Analytics candidate at The University of Texas at Dallas with a background that combines technology, data analytics, business operations, and project leadership.",
   seoDescription:
-    "Atharav Samant is an MBA and M.S. Business Analytics and AI candidate at The University of Texas at Dallas. Former Project Manager at Abhitech Energycon, he built AbhiStat, AbhiPMT, and SmartCoke for manufacturing, steel plants, and power utilities.",
+    "Atharav Samant is an MBA and M.S. Business Analytics and AI candidate at The University of Texas at Dallas (August 2026 – May 2028). Former Project Manager at Abhitech Energycon, he built AbhiStat, AbhiPMT, and SmartCoke for manufacturing, steel plants, and power utilities.",
   keywords: [
     "Atharav Samant",
     "Atharav Ganesh Samant",
@@ -34,6 +36,7 @@ export const site = {
 } as const;
 
 export const nav = [
+  { href: "#about", label: "About", icon: "user" },
   { href: "#work", label: "Work", icon: "ops" },
   { href: "#experience", label: "Experience", icon: "briefcase" },
   { href: "#education", label: "Education", icon: "grad" },
@@ -50,19 +53,39 @@ export const affiliations = [
   },
   {
     name: "UT Dallas",
-    role: "MBA / M.S. Analytics & AI",
+    role: "MBA / M.S. Analytics & AI, 2026–2028",
     src: "/logos/utdallas.svg",
     href: "https://jindal.utdallas.edu/",
     onDark: false,
   },
   {
     name: "UC Davis",
-    role: "B.S. Computer Science & Engineering",
+    role: "Computer Science & Engineering, 2019–2023",
     src: "/logos/ucdavis.svg",
     href: "https://www.ucdavis.edu/",
     onDark: true,
   },
 ] as const;
+
+export const about = {
+  paragraphs: [
+    "After earning my Bachelor's degree in Computer Science & Engineering from the University of California, Davis, I returned to India to work in an industrial business. That gave me a chance to operate at the intersection of technology and business, building solutions while working directly with customers, engineers, and business leaders on real operational challenges.",
+    "At Abhitech Energycon, I developed ERP and analytics solutions, led cross-functional projects, and helped drive AI and machine learning initiatives focused on manufacturing optimization and operational efficiency. I created an automated analytics platform that transformed product reporting and customer analysis, reducing manual effort while improving decision-making. I also led work on sustainability, industrial AI, and process improvement, including presenting SmartCoke at the World Congress on Engineering Asset Management (WCEAM 2024).",
+    "What differentiates my experience is the combination of technical expertise and business exposure. Having worked in an owner-operated business environment, I have firsthand insight into how strategic decisions are made, how teams are managed, and how technology investments create measurable business value.",
+    "I am building on that foundation through a dual-degree MBA and M.S. in Business Analytics and Artificial Intelligence at The University of Texas at Dallas, combining business strategy, analytics, and AI to solve complex business challenges and drive digital transformation.",
+  ],
+  interests: [
+    "Management consulting",
+    "Technology consulting",
+    "Business analytics",
+    "Digital transformation",
+    "Product strategy",
+    "Artificial intelligence",
+    "ERP systems",
+    "Operations improvement",
+    "Data-driven decision making",
+  ],
+} as const;
 
 export const metrics = [
   {
@@ -164,6 +187,7 @@ export const experience = [
     location: "Mumbai, India",
     logo: "/logos/abhitech.svg",
     href: "https://www.abhitechenergycon.com/",
+    focus: "Energy conservation · steel & power",
     roles: [
       {
         title: "Project Manager",
@@ -185,6 +209,24 @@ export const experience = [
       },
     ],
   },
+  {
+    company: "Technocrafts Switchgears Pvt. Ltd.",
+    location: "Thane, India",
+    logo: "/logos/technocrafts.png",
+    href: "https://www.technocrafts.net/",
+    focus: "Medium-voltage switchgear · manufacturing",
+    roles: [
+      {
+        title: "Intern",
+        dates: "June 2021 – July 2021",
+        certificate: "/images/technocrafts-certificate.jpg",
+        bullets: [
+          "Completed internship projects in circuits and panel designing with 2D AutoCAD, plus panel testing and relay programming on an existing electrical system.",
+          "Supported manufacturing optimization, quality assurance, and technical documentation while gaining hands-on exposure to industrial automation and engineering project execution.",
+        ],
+      },
+    ],
+  },
 ] as const;
 
 export const speaking = {
@@ -200,9 +242,11 @@ export const education = [
   {
     school: "The University of Texas at Dallas",
     college: "Naveen Jindal School of Management",
-    degree: "MBA and M.S. in Business Analytics and AI",
-    dates: "June 2028",
+    degree: "MBA and M.S. in Business Analytics and Artificial Intelligence",
+    dates: "August 2026 – May 2028",
     note: "Dual degree",
+    detail:
+      "Pursuing a dual-degree MBA and M.S. in Business Analytics and Artificial Intelligence at the Naveen Jindal School of Management. Interested in consulting, technology strategy, digital transformation, product innovation, and data-driven decision-making.",
     logo: "/logos/utdallas.svg",
     href: "https://jindal.utdallas.edu/",
     onDark: false,
@@ -210,8 +254,8 @@ export const education = [
   {
     school: "The University of California, Davis",
     college: "College of Engineering",
-    degree: "B.S. in Computer Science & Engineering",
-    dates: "September 2023",
+    degree: "Bachelor of Engineering in Computer Science and Engineering",
+    dates: "September 2019 – September 2023",
     note: "Undergraduate",
     logo: "/logos/ucdavis.svg",
     href: "https://www.ucdavis.edu/",
@@ -233,8 +277,9 @@ export const skills = [
     group: "Analytics",
     items: [
       "Python",
+      "Java",
       "Data analysis",
-      "Statistical analysis",
+      "Statistical data analysis",
       "Machine learning",
       "Data visualization",
     ],
@@ -242,11 +287,36 @@ export const skills = [
   {
     group: "Product & technology",
     items: [
+      "Software design",
+      "Computer programming",
+      "Unity",
       "Product development",
       "Requirements analysis",
-      "Business case development",
       "ERP systems",
+    ],
+  },
+  {
+    group: "Leadership",
+    items: [
+      "People management",
+      "Leadership",
       "Project management",
+      "Strategic communications",
+      "Time management",
+      "Customer retention",
+    ],
+  },
+  {
+    group: "Outside work",
+    items: [
+      "Badminton",
+      "Squash",
+      "Chess",
+      "Table tennis",
+      "Soccer",
+      "Cycling",
+      "Event management",
+      "Photography",
     ],
   },
 ] as const;
