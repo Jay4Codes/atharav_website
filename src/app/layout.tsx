@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import { ConsoleCredit } from "@/components/console-credit";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/data/content";
 import "./globals.css";
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full bg-bg text-ink">
         <JsonLd />
+        <ConsoleCredit />
         {children}
       </body>
     </html>
