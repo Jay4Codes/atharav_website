@@ -1,6 +1,8 @@
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
+import { Reveal } from "@/components/reveal";
 import { RichText } from "@/components/rich-text";
+import { SectionKicker } from "@/components/section-kicker";
 import { education, skills } from "@/data/content";
 
 export function Education() {
@@ -8,15 +10,13 @@ export function Education() {
     <section id="education" className="border-b border-line">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12 lg:px-8 lg:py-20">
         <div>
-          <p className="label">
-            <Icon name="grad" className="h-4 w-4" />
-            Education
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+          <SectionKicker index="04" icon="grad" label="Education" />
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
             Technical foundation, dual graduate path
           </h2>
           <div className="mt-8 grid gap-4">
-            {education.map((item) => (
+            {education.map((item, index) => (
+              <Reveal key={item.school} delay={index * 80}>
               <a
                 key={item.school}
                 href={item.href}
@@ -60,6 +60,7 @@ export function Education() {
                   {item.dates}
                 </p>
               </a>
+              </Reveal>
             ))}
           </div>
         </div>

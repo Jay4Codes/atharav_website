@@ -1,14 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@/components/icon";
 import { nav, site } from "@/data/content";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+
+  useEffect(() => {
+    const sections = nav
+      .map((item) => document.querySelector(item.href))
+      .filter((node): node is Element => Boolean(node));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActive(`#${visible.target.id}`);
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0.1, 0.3, 0.6] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur-md">
+    <header className="relative sticky top-0 z-40 border-b border-line bg-surface/88 backdrop-blur-md">
+      <div className="progress-bar" aria-hidden="true" />
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8">
         <a href="#top" className="group flex min-h-11 items-center gap-2.5 sm:gap-3">
           <span className="flex h-8 w-8 items-center justify-center bg-navy text-[11px] font-semibold text-white transition-transform duration-200 ease-[var(--ease)] group-hover:scale-105">
@@ -24,7 +45,9 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="nav-link inline-flex min-h-11 items-center gap-1.5 text-[13px] font-medium text-ink-soft"
+              className={`nav-link inline-flex min-h-11 items-center gap-1.5 text-[13px] font-medium ${
+                active === item.href ? "is-active text-ink" : "text-ink-soft"
+              }`}
             >
               <Icon name={item.icon} className="hidden h-4 w-4 lg:inline" />
               {item.label}

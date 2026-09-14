@@ -1,24 +1,24 @@
 import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
+import { Reveal } from "@/components/reveal";
 import { RichText } from "@/components/rich-text";
+import { SectionKicker } from "@/components/section-kicker";
 import { experience, partners, speaking } from "@/data/content";
 
 export function Experience() {
   return (
     <section id="experience" className="border-b border-line bg-surface">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <p className="label">
-          <Icon name="briefcase" className="h-4 w-4" />
-          Experience
-        </p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+        <SectionKicker index="03" icon="briefcase" label="Experience" />
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
           From plant floor to product
         </h2>
 
         <div className="mt-8 space-y-8 md:mt-10">
-          {experience.map((job) => (
-            <article key={job.company} className="card overflow-hidden">
+          {experience.map((job, index) => (
+            <Reveal key={job.company} delay={index * 80}>
+              <article className="card overflow-hidden">
               <div className="flex flex-col gap-3 border-b border-line px-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
                 <a
                   href={job.href}
@@ -94,6 +94,7 @@ export function Experience() {
                 ))}
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
 

@@ -87,7 +87,47 @@ export const about = {
     "Operations improvement",
     "Data-driven decision making",
   ],
+  lenses: [
+    {
+      title: "Technology",
+      icon: "chevrons",
+      text: "Computer science, analytics products, and machine learning used on real plant data.",
+    },
+    {
+      title: "Operations",
+      icon: "ops",
+      text: "Systems rolled out to ~400 people, with reporting that moves in minutes instead of days.",
+    },
+    {
+      title: "Business",
+      icon: "flag",
+      text: "Owner-operated decisions, client evidence, and an MBA path aimed at consulting and strategy.",
+    },
+  ],
 } as const;
+
+export const proof = [
+  {
+    kicker: "AbhiStat",
+    value: "5h → 5m",
+    label: "product analysis cycle",
+  },
+  {
+    kicker: "AbhiPMT",
+    value: "400+",
+    count: 400,
+    suffix: "+",
+    label: "employees on one platform",
+  },
+  {
+    kicker: "Spend avoided",
+    value: "$28K",
+    count: 28,
+    prefix: "$",
+    suffix: "K",
+    label: "annual software cost",
+  },
+] as const;
 
 export const projects = [
   {

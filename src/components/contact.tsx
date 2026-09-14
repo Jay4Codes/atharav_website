@@ -1,23 +1,31 @@
 import { Icon } from "@/components/icon";
 import { site } from "@/data/content";
+import { SectionKicker } from "@/components/section-kicker";
 
 export function Contact() {
   return (
-    <section id="contact" className="navy-panel border-b border-line text-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <p className="flex items-center gap-2 text-[13px] text-white/70">
-          <Icon name="mail" className="h-4 w-4" />
-          Contact
-        </p>
-        <h2 className="mt-3 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+    <section id="contact" className="navy-panel relative overflow-hidden border-b border-line text-white">
+      <div
+        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <SectionKicker index="05" icon="mail" label="Contact" invert />
+        <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
           Get in touch about <em className="em">analytics</em>, <em className="em">operations</em>, and{" "}
           <em className="em">consulting</em> work.
         </h2>
         <p className="mt-4 max-w-xl text-[15px] leading-7 text-white/65">
           Based in <strong className="mark">Richardson, TX</strong>. Best reached by email or LinkedIn.
         </p>
+        <a
+          href={`mailto:${site.email}`}
+          className="email-xl display mt-8 inline-block max-w-full text-2xl leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl"
+        >
+          {site.email}
+        </a>
 
-        <div className="mt-8 grid gap-px bg-white/15 md:grid-cols-3">
+        <div className="mt-10 grid gap-px bg-white/15 md:grid-cols-3">
           <a
             href={`mailto:${site.email}`}
             className="row-link-dark flex min-h-24 items-start gap-3 bg-transparent p-5 sm:p-6"

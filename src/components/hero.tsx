@@ -1,6 +1,7 @@
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { Portrait } from "@/components/portrait";
+import { ProofStrip } from "@/components/proof-strip";
 import { RichText } from "@/components/rich-text";
 import { affiliations, site } from "@/data/content";
 
@@ -14,26 +15,33 @@ export function Hero() {
 
         <div className="flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-14">
           <p className="label rise">
-            <Icon name="pin" className="h-4 w-4 shrink-0" />
+            <span className="live-dot" />
+            Open to internships
+            <span className="text-muted">/</span>
             {site.location}
           </p>
-          <h1 className="display rise d1 mt-3 text-[2rem] leading-[1.1] tracking-tight text-ink sm:text-4xl md:text-5xl lg:text-[3.4rem]">
-            {site.name}
+          <h1 className="display mt-4 text-[2.15rem] leading-[0.95] tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[4.1rem]">
+            <span className="word-mask">
+              <span>Atharav</span>
+            </span>
+            <span className="word-mask d-word-1">
+              <span>Samant</span>
+            </span>
           </h1>
-          <span className="mt-4 block h-0.5 w-16 bg-[image:var(--grad-accent)] rise d1" />
-          <p className="rise d2 mt-4 max-w-xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
+          <span className="mt-5 block h-0.5 w-16 bg-[image:var(--grad-accent)] rise d1" />
+          <p className="rise d2 mt-5 max-w-xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
             <RichText text={site.summary} />
           </p>
           <p className="rise d3 mt-4 max-w-xl text-sm leading-6 text-muted sm:text-[15px] sm:leading-7">
             <strong className="mark">{site.headline}</strong> at{" "}
             <strong className="mark">{site.school}</strong>. <RichText text={site.seeking} />
           </p>
-          <div className="rise d4 mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="rise d4 mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
-              href="#about"
+              href="#work"
               className="btn-primary inline-flex min-h-11 items-center justify-center px-5 text-sm font-semibold"
             >
-              About Atharav
+              See selected work
             </a>
             <a
               href={`mailto:${site.email}`}
@@ -85,6 +93,7 @@ export function Hero() {
           ))}
         </div>
       </div>
+      <ProofStrip />
     </section>
   );
 }
