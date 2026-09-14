@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 import { Logo } from "@/components/logo";
 import { ProjectVisual } from "@/components/project-visual";
@@ -26,9 +27,19 @@ export function Work() {
               id={project.id}
               className="card group flex flex-col overflow-hidden"
             >
-              <div className="media-zoom relative h-36 sm:h-40">
-                <ProjectVisual kind={project.visual} />
-                <div className="absolute top-3 left-3 flex items-center gap-2 bg-white/95 px-2.5 py-1.5">
+              <div className="media-zoom relative h-44 sm:h-52">
+                {"image" in project ? (
+                  <Image
+                    src={project.image}
+                    alt={`${project.name} product interface`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                ) : (
+                  <ProjectVisual kind={project.visual} />
+                )}
+                <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-white/95 px-2.5 py-1.5">
                   <Logo
                     src="/logos/abhitech.svg"
                     alt="Abhitech Energycon"
