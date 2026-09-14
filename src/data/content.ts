@@ -8,7 +8,7 @@ export const site = {
   headline: "MBA & M.S. Business Analytics and AI",
   school: "The University of Texas at Dallas",
   photo: "/images/atharav_samant_utdallas_edu-b89c3c43-edit.jpg",
-  url: "https://atharavsamant.com",
+  url: "https://atharav-samant.com",
   seeking:
     "Actively seeking __internships__ in *consulting*, *technology strategy*, *business analytics*, *product management*, and *digital transformation*.",
   summary:
