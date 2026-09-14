@@ -81,13 +81,7 @@ const paths: Record<IconName, ReactNode> = {
     </>
   ),
   linkedin: (
-    <>
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <path d="M8 10v7" />
-      <path d="M8 7.5v.01" />
-      <path d="M12 17v-4.2c0-1.5 2-1.4 2 0V17" />
-      <path d="M12 12.8V17" />
-    </>
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43A2.06 2.06 0 1 1 5.34 3.3a2.06 2.06 0 0 1 0 4.13M7.12 20.45H3.56V9h3.56zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.23 0" />
   ),
   phone: (
     <>
@@ -331,14 +325,16 @@ export function Icon({
   name: IconName;
   className?: string;
 }) {
+  const filled = name === "linkedin";
+
   return (
     <svg
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill={filled ? "currentColor" : "none"}
+      stroke={filled ? "none" : "currentColor"}
+      strokeWidth={filled ? undefined : "1.7"}
+      strokeLinecap={filled ? undefined : "round"}
+      strokeLinejoin={filled ? undefined : "round"}
       className={className}
       aria-hidden="true"
     >

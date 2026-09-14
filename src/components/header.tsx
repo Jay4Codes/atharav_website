@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { Icon } from "@/components/icon";
 import { nav, site } from "@/data/content";
@@ -12,14 +11,8 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8">
         <a href="#top" className="group flex min-h-11 items-center gap-2.5 sm:gap-3">
-          <span className="relative h-8 w-8 overflow-hidden bg-navy transition-transform duration-200 ease-[var(--ease)] group-hover:scale-105">
-            <Image
-              src={site.photo}
-              alt=""
-              fill
-              sizes="32px"
-              className="object-cover object-[center_12%]"
-            />
+          <span className="flex h-8 w-8 items-center justify-center bg-navy text-[11px] font-semibold text-white transition-transform duration-200 ease-[var(--ease)] group-hover:scale-105">
+            {site.shortName}
           </span>
           <span className="text-sm font-semibold tracking-tight transition-colors group-hover:text-navy">
             {site.name}
