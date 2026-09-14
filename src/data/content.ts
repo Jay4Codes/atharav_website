@@ -5,7 +5,6 @@ export const site = {
   phone: "(214) 223-7218",
   email: "atharav.samant@utdallas.edu",
   linkedin: "https://www.linkedin.com/in/atharav-samant",
-  resumeHref: "/Atharav%20Samant%20Resume.pdf",
   headline: "MBA & M.S. Business Analytics and AI",
   school: "The University of Texas at Dallas",
   status: "Seeking consulting internships",
@@ -18,6 +17,30 @@ export const nav = [
   { href: "#experience", label: "Experience" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
+] as const;
+
+export const affiliations = [
+  {
+    name: "Abhitech Energycon",
+    role: "Project Manager, 2023–2026",
+    src: "/logos/abhitech.svg",
+    href: "https://www.abhitechenergycon.com/",
+    onDark: false,
+  },
+  {
+    name: "UT Dallas",
+    role: "MBA / M.S. Analytics & AI",
+    src: "/logos/utdallas.svg",
+    href: "https://jindal.utdallas.edu/",
+    onDark: false,
+  },
+  {
+    name: "UC Davis",
+    role: "B.S. Computer Science & Engineering",
+    src: "/logos/ucdavis.svg",
+    href: "https://www.ucdavis.edu/",
+    onDark: true,
+  },
 ] as const;
 
 export const metrics = [
@@ -46,7 +69,7 @@ export const metrics = [
 export const projects = [
   {
     id: "abhistat",
-    number: "01",
+    visual: "chart",
     name: "AbhiStat",
     kind: "Analytics product",
     timeframe: "Abhitech Energycon",
@@ -61,7 +84,7 @@ export const projects = [
   },
   {
     id: "abhipmt",
-    number: "02",
+    visual: "ops",
     name: "AbhiPMT",
     kind: "Operations platform",
     timeframe: "Abhitech Energycon",
@@ -76,7 +99,7 @@ export const projects = [
   },
   {
     id: "smartcoke",
-    number: "03",
+    visual: "plant",
     name: "SmartCoke",
     kind: "Industrial AI",
     timeframe: "Abhitech Energycon · WCEAM 2024",
@@ -91,7 +114,7 @@ export const projects = [
   },
   {
     id: "field-reporting",
-    number: "04",
+    visual: "field",
     name: "Field reporting redesign",
     kind: "Operating system",
     timeframe: "Abhitech Energycon",
@@ -110,6 +133,8 @@ export const experience = [
   {
     company: "Abhitech Energycon Limited",
     location: "Mumbai, India",
+    logo: "/logos/abhitech.svg",
+    href: "https://www.abhitechenergycon.com/",
     roles: [
       {
         title: "Project Manager",
@@ -134,7 +159,8 @@ export const experience = [
 ] as const;
 
 export const speaking = {
-  event: "World Congress on Engineering Asset Management (WCEAM 2024)",
+  event: "World Congress on Engineering Asset Management",
+  short: "WCEAM 2024",
   role: "Presenter",
   date: "October 2024",
   detail:
@@ -148,6 +174,9 @@ export const education = [
     degree: "MBA and M.S. in Business Analytics and AI",
     dates: "June 2028",
     note: "Dual degree",
+    logo: "/logos/utdallas.svg",
+    href: "https://jindal.utdallas.edu/",
+    onDark: false,
   },
   {
     school: "The University of California, Davis",
@@ -155,6 +184,18 @@ export const education = [
     degree: "B.S. in Computer Science & Engineering",
     dates: "September 2023",
     note: "Undergraduate",
+    logo: "/logos/ucdavis.svg",
+    href: "https://www.ucdavis.edu/",
+    onDark: true,
+  },
+] as const;
+
+export const partners = [
+  {
+    name: "IIT Kanpur",
+    role: "Academic advisors, SmartCoke",
+    src: "/logos/iitk.svg",
+    href: "https://www.iitk.ac.in/",
   },
 ] as const;
 

@@ -1,45 +1,61 @@
+import { Logo } from "@/components/logo";
 import { education, skills } from "@/data/content";
 
 export function Education() {
   return (
     <section id="education" className="border-b border-line">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
-          <p className="kicker">Education</p>
-          <h2 className="serif mt-3 text-3xl tracking-tight sm:text-4xl">
+          <p className="text-[13px] text-muted">Education</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-[2rem]">
             Technical foundation, dual graduate path
           </h2>
-          <div className="mt-10 space-y-8">
+          <div className="mt-8 grid gap-4">
             {education.map((item) => (
-              <article key={item.school} className="border-t border-line pt-6">
-                <p className="text-xs tracking-[0.16em] uppercase text-brass">
+              <a
+                key={item.school}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className={`border border-line p-6 ${item.onDark ? "bg-davis text-white" : "bg-surface"}`}
+              >
+                <Logo
+                  src={item.logo}
+                  alt={item.school}
+                  className="h-8 w-auto max-w-[13rem] object-contain object-left"
+                />
+                <p className={`mt-5 text-[12px] ${item.onDark ? "text-white/70" : "text-muted"}`}>
                   {item.note}
                 </p>
-                <h3 className="mt-2 text-lg font-medium">{item.school}</h3>
-                <p className="mt-1 text-sm text-muted">{item.college}</p>
-                <p className="mt-3 text-[15px] leading-6 text-ink-soft">
+                <h3 className="mt-1 text-lg font-semibold">{item.school}</h3>
+                <p className={`mt-1 text-sm ${item.onDark ? "text-white/75" : "text-muted"}`}>
+                  {item.college}
+                </p>
+                <p className={`mt-3 text-[15px] leading-6 ${item.onDark ? "text-white/90" : "text-ink-soft"}`}>
                   {item.degree}
                 </p>
-                <p className="mt-2 font-mono text-xs text-muted">{item.dates}</p>
-              </article>
+                <p className={`mono mt-3 text-[12px] ${item.onDark ? "text-white/60" : "text-muted"}`}>
+                  {item.dates}
+                </p>
+              </a>
             ))}
           </div>
         </div>
 
         <div id="skills">
-          <p className="kicker">Capabilities</p>
-          <h2 className="serif mt-3 text-3xl tracking-tight sm:text-4xl">
+          <p className="text-[13px] text-muted">Capabilities</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-[2rem]">
             How I work
           </h2>
-          <div className="mt-10 space-y-8">
+          <div className="mt-8 space-y-8">
             {skills.map((group) => (
               <div key={group.group}>
-                <h3 className="text-sm font-medium">{group.group}</h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
+                <h3 className="text-sm font-semibold">{group.group}</h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="border border-line px-3 py-1.5 text-sm text-ink-soft"
+                      className="border border-line bg-surface px-3 py-1.5 text-sm text-ink-soft"
                     >
                       {item}
                     </li>
