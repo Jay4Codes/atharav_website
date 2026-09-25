@@ -30,11 +30,21 @@ export function Education() {
                       : ""
                 }`}
               >
-                <Logo
-                  src={item.logo}
-                  alt={item.school}
-                  className="h-8 w-auto max-w-[min(16rem,78vw)] object-contain object-left sm:h-9"
-                />
+                {"theme" in item && item.theme === "utd" ? (
+                  <div className="utd-logo-band flex min-h-16 items-center px-4 py-3 sm:min-h-18 sm:px-5">
+                    <Logo
+                      src={item.logo}
+                      alt={item.school}
+                      className="h-auto w-full max-w-[18rem] object-contain object-left"
+                    />
+                  </div>
+                ) : (
+                  <Logo
+                    src={item.logo}
+                    alt={item.school}
+                    className="h-8 w-auto max-w-[min(16rem,78vw)] object-contain object-left sm:h-9"
+                  />
+                )}
                 <p
                   className={`mt-5 text-[12px] font-medium uppercase tracking-[0.14em] ${
                     item.onDark ? "text-white/70" : "text-muted"

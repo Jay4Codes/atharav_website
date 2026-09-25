@@ -261,7 +261,17 @@ body {
 }
 
 .utd-panel {
-  background: linear-gradient(165deg, #1d5c44 0%, #154734 55%, #0d2f22 100%);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, #e87500 28%, transparent) 0%, transparent 38%),
+    linear-gradient(165deg, #1f684d 0%, #154734 55%, #092f24 100%);
+}
+
+.utd-logo-band {
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid color-mix(in srgb, #e87500 28%, white);
+  background: #fff;
+  box-shadow: 0 8px 20px color-mix(in srgb, #092f24 26%, transparent);
 }
 
 .surface-wash {

@@ -54,7 +54,7 @@ export const affiliations = [
   {
     name: "UT Dallas",
     role: "MBA / M.S. Analytics & AI, 2026–2028",
-    src: "/logos/utdallas.svg",
+    src: "/logos/utd.png",
     href: "https://jindal.utdallas.edu/",
     onDark: true,
     theme: "utd",
@@ -135,6 +135,7 @@ export const projects = [
     visual: "chart",
     name: "AbhiStat",
     href: "https://abhistat.com",
+    demoHref: "https://abhistat.com/demo",
     image: "/images/abhistat.jpg",
     kind: "Analytics product",
     timeframe: "Abhitech Energycon",
@@ -152,6 +153,7 @@ export const projects = [
     visual: "ops",
     name: "AbhiPMT",
     href: "https://abhi9.in",
+    demoHref: "https://abhi9.in/demo",
     image: "/images/abhi9.jpg",
     kind: "Operations platform",
     timeframe: "Abhitech Energycon",
@@ -262,7 +264,7 @@ export const education = [
     note: "Dual degree",
     detail:
       "Pursuing a *dual-degree* **MBA and M.S. in Business Analytics and Artificial Intelligence** at the **Naveen Jindal School of Management**. Interested in *consulting*, *technology strategy*, *digital transformation*, *product innovation*, and *data-driven decision-making*.",
-    logo: "/logos/utdallas.svg",
+    logo: "/logos/utd.png",
     href: "https://jindal.utdallas.edu/",
     onDark: true,
     theme: "utd",

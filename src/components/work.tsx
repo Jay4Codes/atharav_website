@@ -43,7 +43,7 @@ export function Work() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div className="impact-band px-4 py-3">
-                    <p className="mono text-[13px] text-accent-2">{project.impact}</p>
+                    <p className="mono text-[13px] text-white">{project.impact}</p>
                     <p className="mt-1 text-[11px] tracking-wide text-white/80">{project.kind}</p>
                   </div>
                 </div>
@@ -101,12 +101,25 @@ export function Work() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-auto flex flex-wrap gap-2 pt-5">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="chip px-2.5 py-1 text-[11px] text-ink-soft">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="mt-auto pt-5">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="chip px-2.5 py-1 text-[11px] text-ink-soft">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {"demoHref" in project ? (
+                      <a
+                        href={(project as { demoHref: string }).demoHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-flex min-h-10 items-center gap-2 border border-navy bg-navy px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:border-accent hover:bg-accent"
+                      >
+                        Try demo
+                        <Icon name="arrowOut" className="h-3.5 w-3.5" />
+                      </a>
+                    ) : null}
                   </div>
                 </div>
               </article>
