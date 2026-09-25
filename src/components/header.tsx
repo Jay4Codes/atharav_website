@@ -53,6 +53,14 @@ export function Header() {
               {item.label}
             </a>
           ))}
+          <a
+            href={encodeURI(site.resume)}
+            download="Atharav-Samant-Resume.pdf"
+            className="btn-secondary hidden min-h-9 items-center gap-1.5 px-3 text-[13px] font-semibold lg:inline-flex"
+          >
+            <Icon name="download" className="h-3.5 w-3.5" />
+            Resume
+          </a>
         </nav>
 
         <button
@@ -85,6 +93,15 @@ export function Header() {
                 {item.label}
               </a>
             ))}
+            <a
+              href={encodeURI(site.resume)}
+              download="Atharav-Samant-Resume.pdf"
+              className="mt-1 flex min-h-11 items-center gap-2.5 text-sm font-semibold text-navy"
+              onClick={() => setOpen(false)}
+            >
+              <Icon name="download" className="h-4 w-4" />
+              Download resume
+            </a>
           </nav>
         </div>
       ) : null}

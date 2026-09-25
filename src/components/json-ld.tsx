@@ -26,6 +26,26 @@ export function JsonLd() {
         name: "University of California, Davis",
       },
     ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Bachelor of Science in Computer Science & Engineering",
+        recognizedBy: {
+          "@type": "CollegeOrUniversity",
+          name: "University of California, Davis",
+        },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "MBA and M.S. in Business Analytics and Artificial Intelligence",
+        recognizedBy: {
+          "@type": "CollegeOrUniversity",
+          name: "The University of Texas at Dallas",
+        },
+      },
+    ],
     worksFor: {
       "@type": "Organization",
       name: "Abhitech Energycon Limited",

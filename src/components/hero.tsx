@@ -29,14 +29,13 @@ export function Hero() {
             </span>
           </h1>
           <span className="mt-4 block h-0.5 w-16 bg-[image:var(--grad-accent)] rise d1 sm:mt-5" />
-          <p className="rise d2 mt-4 hidden max-w-xl text-base leading-7 text-ink-soft sm:block sm:text-lg sm:leading-8">
+          <p className="rise d1 mt-4 max-w-xl text-[15px] font-semibold tracking-tight text-navy sm:mt-5 sm:text-lg">
+            {site.identity}
+          </p>
+          <p className="rise d2 mt-3 max-w-xl text-base leading-7 text-ink-soft sm:text-lg sm:leading-8">
             <RichText text={site.summary} />
           </p>
-          <p className="rise d3 mt-3 max-w-xl text-sm leading-6 text-muted sm:mt-4 sm:text-[15px] sm:leading-7">
-            <span className="hidden sm:inline">
-              <strong className="mark">{site.headline}</strong> at{" "}
-              <strong className="mark">{site.school}</strong>.{" "}
-            </span>
+          <p className="rise d3 mt-3 max-w-xl text-sm leading-6 text-muted sm:text-[15px] sm:leading-7">
             <RichText text={site.seeking} />
           </p>
           <div className="rise d4 mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
@@ -47,11 +46,30 @@ export function Hero() {
               See selected work
             </a>
             <a
-              href={`mailto:${site.email}`}
+              href={encodeURI(site.resume)}
+              download="Atharav-Samant-Resume.pdf"
               className="btn-secondary inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 text-sm font-semibold sm:w-auto"
             >
+              <Icon name="download" className="h-4 w-4" />
+              Download resume
+            </a>
+          </div>
+          <div className="rise d4 mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <a
+              href={`mailto:${site.email}`}
+              className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-navy"
+            >
               <Icon name="mail" className="h-4 w-4" />
-              Email Atharav
+              Email
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-navy"
+            >
+              <Icon name="linkedin" className="h-4 w-4" />
+              LinkedIn
             </a>
           </div>
         </div>

@@ -16,6 +16,7 @@ export type IconName =
   | "mic"
   | "clock"
   | "arrowOut"
+  | "download"
   | "user"
   | "doc"
   | "codeBraces"
@@ -135,6 +136,13 @@ const paths: Record<IconName, ReactNode> = {
     <>
       <path d="M7 17 17 7" />
       <path d="M9 7h8v8" />
+    </>
+  ),
+  download: (
+    <>
+      <path d="M12 4v11" />
+      <path d="m7 11 5 5 5-5" />
+      <path d="M5 20h14" />
     </>
   ),
   user: (

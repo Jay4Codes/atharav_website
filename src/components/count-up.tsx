@@ -14,16 +14,14 @@ export function CountUp({
   suffix?: string;
   className?: string;
 }) {
+  const formatted = `${prefix}${to}${suffix}`;
   const { ref, visible } = useInView<HTMLSpanElement>();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(to);
+  const [animating, setAnimating] = useState(false);
 
   useEffect(() => {
     if (!visible) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-      setValue(to);
-      return;
-    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const start = performance.now();
     const duration = 1100;
@@ -32,8 +30,13 @@ export function CountUp({
     const tick = (now: number) => {
       const t = Math.min((now - start) / duration, 1);
       const eased = 1 - (1 - t) ** 3;
+      setAnimating(true);
       setValue(Math.round(to * eased));
-      if (t < 1) frame = requestAnimationFrame(tick);
+      if (t < 1) {
+        frame = requestAnimationFrame(tick);
+        return;
+      }
+      setAnimating(false);
     };
 
     frame = requestAnimationFrame(tick);
@@ -41,10 +44,11 @@ export function CountUp({
   }, [to, visible]);
 
   return (
-    <span ref={ref} className={className}>
-      {prefix}
-      {value}
-      {suffix}
+    <span ref={ref} className={`relative inline-grid justify-items-start ${className}`}>
+      <span className={animating ? "invisible" : undefined}>{formatted}</span>
+      <span aria-hidden="true" className={`absolute inset-0 ${animating ? "" : "invisible"}`}>
+        {`${prefix}${value}${suffix}`}
+      </span>
     </span>
   );
 }

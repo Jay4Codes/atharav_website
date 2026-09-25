@@ -101,6 +101,12 @@ export function Work() {
                       </li>
                     ))}
                   </ul>
+                  {"process" in project ? (
+                    <p className="mt-4 text-[13px] leading-6 text-ink-soft">
+                      <span className="font-semibold text-ink">Process: </span>
+                      <span className="text-muted">{project.process}</span>
+                    </p>
+                  ) : null}
                   <div className="mt-auto pt-5">
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (

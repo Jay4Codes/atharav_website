@@ -25,7 +25,7 @@ export function Contact() {
           {site.email}
         </a>
 
-        <div className="mt-10 grid gap-px bg-white/15 md:grid-cols-3">
+        <div className="mt-10 grid gap-px bg-white/15 md:grid-cols-2 lg:grid-cols-4">
           <a
             href={`mailto:${site.email}`}
             className="row-link-dark flex min-h-24 items-start gap-3 bg-transparent p-5 sm:p-6"
@@ -56,6 +56,17 @@ export function Contact() {
             <span>
               <span className="block text-[13px] text-white/55">Phone</span>
               <span className="mt-2 block text-sm font-medium">{site.phone}</span>
+            </span>
+          </a>
+          <a
+            href={encodeURI(site.resume)}
+            download="Atharav-Samant-Resume.pdf"
+            className="row-link-dark flex min-h-24 items-start gap-3 bg-transparent p-5 sm:p-6"
+          >
+            <Icon name="download" className="mt-0.5 h-5 w-5 shrink-0 text-white/70" />
+            <span>
+              <span className="block text-[13px] text-white/55">Resume</span>
+              <span className="mt-2 block text-sm font-medium">Download PDF</span>
             </span>
           </a>
         </div>

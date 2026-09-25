@@ -9,10 +9,12 @@ export const site = {
   school: "The University of Texas at Dallas",
   photo: "/images/atharav_samant_utdallas_edu-b89c3c43-edit.jpg",
   url: "https://atharav-samant.com",
+  resume: "/resume.pdf",
+  identity: "Digital Products · AI & Analytics · Business Transformation",
   seeking:
-    "Actively seeking __internships__ in *consulting*, *technology strategy*, *business analytics*, *product management*, and *digital transformation*.",
+    "Actively seeking __internships__ where *technology*, *analytics*, and *business* meet.",
   summary:
-    "I am an **MBA and M.S. Business Analytics** candidate at **The University of Texas at Dallas** with a background that combines *technology*, *data analytics*, *business operations*, and *project leadership*.",
+    "**MBA + M.S. Business Analytics & AI** candidate at **The University of Texas at Dallas** with a **Computer Science & Engineering** background and experience building *analytics*, *AI*, and *enterprise products*.",
   seoDescription:
     "Atharav Samant is an MBA and M.S. Business Analytics and AI candidate at The University of Texas at Dallas (August 2026 – May 2028). Former Project Manager at Abhitech Energycon, he built AbhiStat, AbhiPMT, and SmartCoke for manufacturing, steel plants, and power utilities.",
   keywords: [
@@ -121,9 +123,9 @@ export const proof = [
   },
   {
     kicker: "Spend avoided",
-    value: "$28K",
+    value: "~$28K",
     count: 28,
-    prefix: "$",
+    prefix: "~$",
     suffix: "K",
     label: "annual software cost",
   },
@@ -146,6 +148,7 @@ export const projects = [
       "Replaced a slow, expert-dependent analysis cycle with a *repeatable product-performance pipeline*.",
       "Translated **statistical** and **machine learning** results into evidence leadership and clients could use to make faster decisions.",
     ],
+    process: "Workflow analysis → user requirements → analytics design → product development → client-facing output",
     tags: ["Python", "Statistical analysis", "Machine learning", "Data visualization"],
   },
   {
@@ -164,7 +167,15 @@ export const projects = [
       "Cut estimated software spend by __96%__ by replacing third-party tools with an internal system.",
       "Covered work allocation, project tracking, and day-to-day operating cadence for a *distributed industrial organization*.",
     ],
-    tags: ["Product development", "Requirements analysis", "Business case", "ERP / operations"],
+    process: "Stakeholder needs → requirements → build prioritization → rollout → user adoption",
+    tags: [
+      "Digital product",
+      "Product discovery",
+      "Requirements analysis",
+      "Enterprise systems",
+      "Business case",
+      "Adoption",
+    ],
   },
   {
     id: "smartcoke",
@@ -272,7 +283,7 @@ export const education = [
   {
     school: "The University of California, Davis",
     college: "College of Engineering",
-    degree: "Bachelor of Engineering in Computer Science and Engineering",
+    degree: "Bachelor of Science in Computer Science & Engineering",
     dates: "September 2019 – September 2023",
     note: "Undergraduate",
     logo: "/logos/ucdavis.svg",
@@ -296,7 +307,6 @@ export const skills = [
     icon: "chart",
     items: [
       { label: "Python", icon: "codeBraces" },
-      { label: "Java", icon: "coffee" },
       { label: "Data analysis", icon: "table" },
       { label: "Statistical data analysis", icon: "trend" },
       { label: "Machine learning", icon: "nodes" },
@@ -319,10 +329,10 @@ export const skills = [
     group: "Leadership",
     icon: "people",
     items: [
-      { label: "People management", icon: "people" },
+      { label: "Stakeholder management", icon: "people" },
       { label: "Leadership", icon: "flag" },
       { label: "Project management", icon: "ops" },
-      { label: "Strategic communications", icon: "chat" },
+      { label: "Strategic communication", icon: "chat" },
       { label: "Time management", icon: "clock" },
       { label: "Customer retention", icon: "refresh" },
     ],
